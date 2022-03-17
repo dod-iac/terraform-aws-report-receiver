@@ -1,32 +1,14 @@
 /**
- * # Terraform Module template
- *
- * This repository is meant to be a template for creating new terraform modules.
- *
- * ## Creating a new Terraform Module
- *
- * 1. Clone this repo, renaming appropriately.
- * 1. Write your terraform code in the root dir.
- * 1. Ensure you've completed the [Developer Setup](#developer-setup).
- * 1. In the root dir, modify the `module` line for the repo path. Then run `make tidy`, which updates the `go.sum` file and downloads dependencies.
- * 1. Update the terratest tests in the examples and test directories.
- * 1. Run your terratest tests to ensure they work as expected using instructions below.
- *
- * ---
- *
- * <!-- DELETE ABOVE THIS LINE -->
+ * # AWS Report Receiver
  *
  * ## Description
  *
- * Please put a description of what this module does here
+ * Provisions receipt and ETL pipeline for one of the supported report types
  *
  * ## Usage
  *
- * Add Usage information here
- *
  * Resources:
- *
- * * [Article Example](https://article.example.com)
+ * TODO
  *
  * ```hcl
  * module "example" {
@@ -47,7 +29,7 @@
  *
  * ## Terraform Version
  *
- * Terraform 0.13. Pin module version to ~> 1.0.0 . Submit pull-requests to master branch.
+ * Pin module version to ~> 1.0.0 . Submit pull-requests to master branch.
  *
  * Terraform 0.11 and 0.12 are not supported.
  *
