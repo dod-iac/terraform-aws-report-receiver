@@ -1,32 +1,14 @@
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
-# Terraform Module template
-
-This repository is meant to be a template for creating new terraform modules.
-
-## Creating a new Terraform Module
-
-1. Clone this repo, renaming appropriately.
-1. Write your terraform code in the root dir.
-1. Ensure you've completed the [Developer Setup](#developer-setup).
-1. In the root dir, modify the `module` line for the repo path. Then run `make tidy`, which updates the `go.sum` file and downloads dependencies.
-1. Update the terratest tests in the examples and test directories.
-1. Run your terratest tests to ensure they work as expected using instructions below.
-
----
-
-<!-- DELETE ABOVE THIS LINE -->
+# AWS Report Receiver
 
 ## Description
 
-Please put a description of what this module does here
+Provisions receipt and ETL pipeline for one of the supported report types
 
 ## Usage
 
-Add Usage information here
-
 Resources:
-
-* [Article Example](https://article.example.com)
+TODO
 
 ```hcl
 module "example" {
@@ -47,7 +29,7 @@ Run all terratest tests using the `terratest` script.  If using `aws-vault`, you
 
 ## Terraform Version
 
-Terraform 0.13. Pin module version to ~> 1.0.0 . Submit pull-requests to master branch.
+Pin module version to ~> 1.0.0 . Submit pull-requests to master branch.
 
 Terraform 0.11 and 0.12 are not supported.
 
@@ -72,25 +54,56 @@ If using `tfenv`, then add a `.terraform-version` to the project root dir, with 
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 3.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 3.55 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 3.0 |
+| <a name="provider_archive"></a> [archive](#provider\_archive) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 3.55 |
+| <a name="provider_random"></a> [random](#provider\_random) | n/a |
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_cloudwatch_kms_key"></a> [cloudwatch\_kms\_key](#module\_cloudwatch\_kms\_key) | dod-iac/cloudwatch-kms-key/aws | >1.0.0 |
+| <a name="module_error_bucket"></a> [error\_bucket](#module\_error\_bucket) | trussworks/s3-private-bucket/aws | >= 3.7.1 |
+| <a name="module_firehose_errorkms"></a> [firehose\_errorkms](#module\_firehose\_errorkms) | ../../../terraform-aws-s3-kms-key/ | n/a |
+| <a name="module_kinesis_kms_key"></a> [kinesis\_kms\_key](#module\_kinesis\_kms\_key) | dod-iac/kinesis-kms-key/aws | >= 1.0.1 |
+| <a name="module_kinesis_stream"></a> [kinesis\_stream](#module\_kinesis\_stream) | dod-iac/kinesis-stream/aws | >1.0.0 |
 
 ## Resources
 
 | Name | Type |
 |------|------|
+| [aws_cloudwatch_log_destination.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_destination) | resource |
+| [aws_cloudwatch_log_destination_policy.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_destination_policy) | resource |
+| [aws_cloudwatch_log_group.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) | resource |
+| [aws_iam_policy.firehose](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
+| [aws_iam_policy.logging_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
+| [aws_iam_policy.publish](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
+| [aws_iam_role.etl_lambda](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_iam_role.firehose](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_iam_role.publish](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_iam_role_policy_attachment.firehoseattachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_iam_role_policy_attachment.logging_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_iam_role_policy_attachment.publishattachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_kinesis_firehose_delivery_stream.es](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kinesis_firehose_delivery_stream) | resource |
+| [aws_lambda_event_source_mapping.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_event_source_mapping) | resource |
+| [aws_lambda_function.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function) | resource |
+| [random_string.prefix](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
+| [archive_file.this](https://registry.terraform.io/providers/hashicorp/archive/latest/docs/data-sources/file) | data source |
 | [aws_caller_identity.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/caller_identity) | data source |
 | [aws_iam_account_alias.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_account_alias) | data source |
+| [aws_iam_policy_document.assumepublish](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_iam_policy_document.destination_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_iam_policy_document.firehoseassume](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_iam_policy_document.firehosepolicy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_iam_policy_document.lambdaassume](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_iam_policy_document.logging_policy_doc](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 | [aws_partition.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/partition) | data source |
 | [aws_region.current](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/region) | data source |
 
@@ -98,9 +111,22 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_tags"></a> [tags](#input\_tags) | Tags applied to the AWS resources. | `map(string)` | `{}` | no |
+| <a name="input_access_logging_bucket"></a> [access\_logging\_bucket](#input\_access\_logging\_bucket) | The S3 bucket to send S3 access logs. Used by the firehose error bucket that is created | `string` | n/a | yes |
+| <a name="input_opensearch_domain_arn"></a> [opensearch\_domain\_arn](#input\_opensearch\_domain\_arn) | ARN of opensearch to be used as target of stream | `string` | n/a | yes |
+| <a name="input_security_group_ids"></a> [security\_group\_ids](#input\_security\_group\_ids) | IDs of security groups to be used that allow ingress to opensearch deployment | `list(string)` | n/a | yes |
+| <a name="input_source_account"></a> [source\_account](#input\_source\_account) | the account number of the publishing account | `string` | n/a | yes |
+| <a name="input_source_region"></a> [source\_region](#input\_source\_region) | the region from which data will be published | `string` | `"us-west-2"` | no |
+| <a name="input_stream_type"></a> [stream\_type](#input\_stream\_type) | The type of string being configured. Accepted values are (cloudtrail,flowlog,guardduty,config) | `string` | n/a | yes |
+| <a name="input_subnet_ids"></a> [subnet\_ids](#input\_subnet\_ids) | ids of subnets that kinesisfirehose will create interfaces in. Make sure ACLs permit traffic from this subnet to where opensearch is deployed | `list(string)` | n/a | yes |
+| <a name="input_tags"></a> [tags](#input\_tags) | Tags to be applied to all resources | <pre>object({<br>    Project     = string<br>    Environment = string<br>    Application = string<br>  })</pre> | <pre>{<br>  "Application": "infra",<br>  "Environment": "dev",<br>  "Project": "elmo"<br>}</pre> | no |
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_destination_arn"></a> [destination\_arn](#output\_destination\_arn) | n/a |
+| <a name="output_kinesis_name"></a> [kinesis\_name](#output\_kinesis\_name) | n/a |
+| <a name="output_kinesis_stream_arn"></a> [kinesis\_stream\_arn](#output\_kinesis\_stream\_arn) | n/a |
+| <a name="output_kms_arn"></a> [kms\_arn](#output\_kms\_arn) | n/a |
+| <a name="output_publish_role_arn"></a> [publish\_role\_arn](#output\_publish\_role\_arn) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

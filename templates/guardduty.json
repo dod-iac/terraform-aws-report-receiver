@@ -1,0 +1,1820 @@
+{
+  "index_patterns": [
+    "guardduty*"
+  ],
+  "mappings": {
+    "properties": {
+      "account": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "detail": {
+        "properties": {
+          "accountId": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "arn": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "createdAt": {
+            "type": "date"
+          },
+          "description": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "id": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "partition": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "region": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "resource": {
+            "properties": {
+              "accessKeyDetails": {
+                "properties": {
+                  "accessKeyId": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  },
+                  "principalId": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  },
+                  "userName": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  },
+                  "userType": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  }
+                }
+              },
+              "instanceDetails": {
+                "properties": {
+                  "availabilityZone": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  },
+                  "iamInstanceProfile": {
+                    "properties": {
+                      "arn": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "id": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      }
+                    }
+                  },
+                  "imageDescription": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  },
+                  "imageId": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  },
+                  "instanceId": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  },
+                  "instanceState": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  },
+                  "instanceType": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  },
+                  "launchTime": {
+                    "type": "date"
+                  },
+                  "networkInterfaces": {
+                    "properties": {
+                      "networkInterfaceId": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "privateDnsName": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "privateIpAddress": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "privateIpAddresses": {
+                        "properties": {
+                          "privateDnsName": {
+                            "fields": {
+                              "keyword": {
+                                "ignore_above": 256,
+                                "type": "keyword"
+                              }
+                            },
+                            "type": "text"
+                          },
+                          "privateIpAddress": {
+                            "fields": {
+                              "keyword": {
+                                "ignore_above": 256,
+                                "type": "keyword"
+                              }
+                            },
+                            "type": "text"
+                          }
+                        }
+                      },
+                      "publicDnsName": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "publicIp": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "securityGroups": {
+                        "properties": {
+                          "groupId": {
+                            "fields": {
+                              "keyword": {
+                                "ignore_above": 256,
+                                "type": "keyword"
+                              }
+                            },
+                            "type": "text"
+                          },
+                          "groupName": {
+                            "fields": {
+                              "keyword": {
+                                "ignore_above": 256,
+                                "type": "keyword"
+                              }
+                            },
+                            "type": "text"
+                          }
+                        }
+                      },
+                      "subnetId": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "vpcId": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      }
+                    }
+                  },
+                  "outpostArn": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  },
+                  "productCodes": {
+                    "properties": {
+                      "productCodeId": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "productCodeType": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      }
+                    }
+                  },
+                  "tags": {
+                    "properties": {
+                      "key": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "value": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      }
+                    }
+                  }
+                }
+              },
+              "resourceType": {
+                "fields": {
+                  "keyword": {
+                    "ignore_above": 256,
+                    "type": "keyword"
+                  }
+                },
+                "type": "text"
+              },
+              "s3BucketDetails": {
+                "properties": {
+                  "arn": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  },
+                  "createdAt": {
+                    "type": "float"
+                  },
+                  "defaultServerSideEncryption": {
+                    "properties": {
+                      "encryptionType": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "kmsMasterKeyArn": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      }
+                    }
+                  },
+                  "name": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  },
+                  "owner": {
+                    "properties": {
+                      "id": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      }
+                    }
+                  },
+                  "publicAccess": {
+                    "properties": {
+                      "effectivePermission": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "permissionConfiguration": {
+                        "properties": {
+                          "accountLevelPermissions": {
+                            "properties": {
+                              "blockPublicAccess": {
+                                "properties": {
+                                  "blockPublicAcls": {
+                                    "type": "boolean"
+                                  },
+                                  "blockPublicPolicy": {
+                                    "type": "boolean"
+                                  },
+                                  "ignorePublicAcls": {
+                                    "type": "boolean"
+                                  },
+                                  "restrictPublicBuckets": {
+                                    "type": "boolean"
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "bucketLevelPermissions": {
+                            "properties": {
+                              "accessControlList": {
+                                "properties": {
+                                  "allowsPublicReadAccess": {
+                                    "type": "boolean"
+                                  },
+                                  "allowsPublicWriteAccess": {
+                                    "type": "boolean"
+                                  }
+                                }
+                              },
+                              "blockPublicAccess": {
+                                "properties": {
+                                  "blockPublicAcls": {
+                                    "type": "boolean"
+                                  },
+                                  "blockPublicPolicy": {
+                                    "type": "boolean"
+                                  },
+                                  "ignorePublicAcls": {
+                                    "type": "boolean"
+                                  },
+                                  "restrictPublicBuckets": {
+                                    "type": "boolean"
+                                  }
+                                }
+                              },
+                              "bucketPolicy": {
+                                "properties": {
+                                  "allowsPublicReadAccess": {
+                                    "type": "boolean"
+                                  },
+                                  "allowsPublicWriteAccess": {
+                                    "type": "boolean"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "tags": {
+                    "properties": {
+                      "key": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "value": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      }
+                    }
+                  },
+                  "type": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  }
+                }
+              }
+            }
+          },
+          "schemaVersion": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "service": {
+            "properties": {
+              "action": {
+                "properties": {
+                  "actionType": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  },
+                  "awsApiCallAction": {
+                    "properties": {
+                      "affectedResources": {
+                        "properties": {
+                          "AWS::CloudTrail::Trail": {
+                            "fields": {
+                              "keyword": {
+                                "ignore_above": 256,
+                                "type": "keyword"
+                              }
+                            },
+                            "type": "text"
+                          },
+                          "AWS::EC2::Instance": {
+                            "fields": {
+                              "keyword": {
+                                "ignore_above": 256,
+                                "type": "keyword"
+                              }
+                            },
+                            "type": "text"
+                          },
+                          "AWS::S3::Bucket": {
+                            "fields": {
+                              "keyword": {
+                                "ignore_above": 256,
+                                "type": "keyword"
+                              }
+                            },
+                            "type": "text"
+                          }
+                        }
+                      },
+                      "api": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "callerType": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "errorCode": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "remoteIpDetails": {
+                        "properties": {
+                          "city": {
+                            "properties": {
+                              "cityName": {
+                                "fields": {
+                                  "keyword": {
+                                    "ignore_above": 256,
+                                    "type": "keyword"
+                                  }
+                                },
+                                "type": "text"
+                              }
+                            }
+                          },
+                          "country": {
+                            "properties": {
+                              "countryName": {
+                                "fields": {
+                                  "keyword": {
+                                    "ignore_above": 256,
+                                    "type": "keyword"
+                                  }
+                                },
+                                "type": "text"
+                              }
+                            }
+                          },
+                          "geoLocation": {
+                            "properties": {
+                              "lat": {
+                                "type": "long"
+                              },
+                              "lon": {
+                                "type": "long"
+                              }
+                            }
+                          },
+                          "ipAddressV4": {
+                            "fields": {
+                              "keyword": {
+                                "ignore_above": 256,
+                                "type": "keyword"
+                              }
+                            },
+                            "type": "text"
+                          },
+                          "organization": {
+                            "properties": {
+                              "asn": {
+                                "fields": {
+                                  "keyword": {
+                                    "ignore_above": 256,
+                                    "type": "keyword"
+                                  }
+                                },
+                                "type": "text"
+                              },
+                              "asnOrg": {
+                                "fields": {
+                                  "keyword": {
+                                    "ignore_above": 256,
+                                    "type": "keyword"
+                                  }
+                                },
+                                "type": "text"
+                              },
+                              "isp": {
+                                "fields": {
+                                  "keyword": {
+                                    "ignore_above": 256,
+                                    "type": "keyword"
+                                  }
+                                },
+                                "type": "text"
+                              },
+                              "org": {
+                                "fields": {
+                                  "keyword": {
+                                    "ignore_above": 256,
+                                    "type": "keyword"
+                                  }
+                                },
+                                "type": "text"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "serviceName": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      }
+                    }
+                  },
+                  "dnsRequestAction": {
+                    "properties": {
+                      "blocked": {
+                        "type": "boolean"
+                      },
+                      "domain": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "protocol": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      }
+                    }
+                  },
+                  "networkConnectionAction": {
+                    "properties": {
+                      "blocked": {
+                        "type": "boolean"
+                      },
+                      "connectionDirection": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "localIpDetails": {
+                        "properties": {
+                          "ipAddressV4": {
+                            "fields": {
+                              "keyword": {
+                                "ignore_above": 256,
+                                "type": "keyword"
+                              }
+                            },
+                            "type": "text"
+                          }
+                        }
+                      },
+                      "localPortDetails": {
+                        "properties": {
+                          "port": {
+                            "type": "long"
+                          },
+                          "portName": {
+                            "fields": {
+                              "keyword": {
+                                "ignore_above": 256,
+                                "type": "keyword"
+                              }
+                            },
+                            "type": "text"
+                          }
+                        }
+                      },
+                      "protocol": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "remoteIpDetails": {
+                        "properties": {
+                          "city": {
+                            "properties": {
+                              "cityName": {
+                                "fields": {
+                                  "keyword": {
+                                    "ignore_above": 256,
+                                    "type": "keyword"
+                                  }
+                                },
+                                "type": "text"
+                              }
+                            }
+                          },
+                          "country": {
+                            "properties": {
+                              "countryName": {
+                                "fields": {
+                                  "keyword": {
+                                    "ignore_above": 256,
+                                    "type": "keyword"
+                                  }
+                                },
+                                "type": "text"
+                              }
+                            }
+                          },
+                          "geoLocation": {
+                            "properties": {
+                              "lat": {
+                                "type": "long"
+                              },
+                              "lon": {
+                                "type": "long"
+                              }
+                            }
+                          },
+                          "ipAddressV4": {
+                            "fields": {
+                              "keyword": {
+                                "ignore_above": 256,
+                                "type": "keyword"
+                              }
+                            },
+                            "type": "text"
+                          },
+                          "organization": {
+                            "properties": {
+                              "asn": {
+                                "fields": {
+                                  "keyword": {
+                                    "ignore_above": 256,
+                                    "type": "keyword"
+                                  }
+                                },
+                                "type": "text"
+                              },
+                              "asnOrg": {
+                                "fields": {
+                                  "keyword": {
+                                    "ignore_above": 256,
+                                    "type": "keyword"
+                                  }
+                                },
+                                "type": "text"
+                              },
+                              "isp": {
+                                "fields": {
+                                  "keyword": {
+                                    "ignore_above": 256,
+                                    "type": "keyword"
+                                  }
+                                },
+                                "type": "text"
+                              },
+                              "org": {
+                                "fields": {
+                                  "keyword": {
+                                    "ignore_above": 256,
+                                    "type": "keyword"
+                                  }
+                                },
+                                "type": "text"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "remotePortDetails": {
+                        "properties": {
+                          "port": {
+                            "type": "long"
+                          },
+                          "portName": {
+                            "fields": {
+                              "keyword": {
+                                "ignore_above": 256,
+                                "type": "keyword"
+                              }
+                            },
+                            "type": "text"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "portProbeAction": {
+                    "properties": {
+                      "blocked": {
+                        "type": "boolean"
+                      },
+                      "portProbeDetails": {
+                        "properties": {
+                          "localIpDetails": {
+                            "properties": {
+                              "ipAddressV4": {
+                                "fields": {
+                                  "keyword": {
+                                    "ignore_above": 256,
+                                    "type": "keyword"
+                                  }
+                                },
+                                "type": "text"
+                              }
+                            }
+                          },
+                          "localPortDetails": {
+                            "properties": {
+                              "port": {
+                                "type": "long"
+                              },
+                              "portName": {
+                                "fields": {
+                                  "keyword": {
+                                    "ignore_above": 256,
+                                    "type": "keyword"
+                                  }
+                                },
+                                "type": "text"
+                              }
+                            }
+                          },
+                          "remoteIpDetails": {
+                            "properties": {
+                              "city": {
+                                "properties": {
+                                  "cityName": {
+                                    "fields": {
+                                      "keyword": {
+                                        "ignore_above": 256,
+                                        "type": "keyword"
+                                      }
+                                    },
+                                    "type": "text"
+                                  }
+                                }
+                              },
+                              "country": {
+                                "properties": {
+                                  "countryName": {
+                                    "fields": {
+                                      "keyword": {
+                                        "ignore_above": 256,
+                                        "type": "keyword"
+                                      }
+                                    },
+                                    "type": "text"
+                                  }
+                                }
+                              },
+                              "geoLocation": {
+                                "properties": {
+                                  "lat": {
+                                    "type": "long"
+                                  },
+                                  "lon": {
+                                    "type": "long"
+                                  }
+                                }
+                              },
+                              "ipAddressV4": {
+                                "fields": {
+                                  "keyword": {
+                                    "ignore_above": 256,
+                                    "type": "keyword"
+                                  }
+                                },
+                                "type": "text"
+                              },
+                              "organization": {
+                                "properties": {
+                                  "asn": {
+                                    "fields": {
+                                      "keyword": {
+                                        "ignore_above": 256,
+                                        "type": "keyword"
+                                      }
+                                    },
+                                    "type": "text"
+                                  },
+                                  "asnOrg": {
+                                    "fields": {
+                                      "keyword": {
+                                        "ignore_above": 256,
+                                        "type": "keyword"
+                                      }
+                                    },
+                                    "type": "text"
+                                  },
+                                  "isp": {
+                                    "fields": {
+                                      "keyword": {
+                                        "ignore_above": 256,
+                                        "type": "keyword"
+                                      }
+                                    },
+                                    "type": "text"
+                                  },
+                                  "org": {
+                                    "fields": {
+                                      "keyword": {
+                                        "ignore_above": 256,
+                                        "type": "keyword"
+                                      }
+                                    },
+                                    "type": "text"
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "additionalInfo": {
+                "properties": {
+                  "anomalies": {
+                    "properties": {
+                      "anomalousAPIs": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      }
+                    }
+                  },
+                  "apiCalls": {
+                    "properties": {
+                      "count": {
+                        "type": "long"
+                      },
+                      "firstSeen": {
+                        "type": "long"
+                      },
+                      "lastSeen": {
+                        "type": "long"
+                      },
+                      "name": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      }
+                    }
+                  },
+                  "domain": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  },
+                  "newPolicy": {
+                    "properties": {
+                      "allowUsersToChangePassword": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "hardExpiry": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "maxPasswordAge": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "minimumPasswordLength": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "passwordReusePrevention": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "requireLowercaseCharacters": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "requireNumbers": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "requireSymbols": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "requireUppercaseCharacters": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      }
+                    }
+                  },
+                  "oldPolicy": {
+                    "properties": {
+                      "allowUsersToChangePassword": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "hardExpiry": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "maxPasswordAge": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "minimumPasswordLength": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "passwordReusePrevention": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "requireLowercaseCharacters": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "requireNumbers": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "requireSymbols": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "requireUppercaseCharacters": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      }
+                    }
+                  },
+                  "portsScannedSample": {
+                    "type": "long"
+                  },
+                  "profiledBehavior": {
+                    "properties": {
+                      "frequentProfiledAPIsAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "frequentProfiledAPIsUserIdentityProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "frequentProfiledASNsAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "frequentProfiledASNsUserIdentityProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "frequentProfiledUserAgentsAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "frequentProfiledUserAgentsUserIdentityProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "frequentProfiledUserNamesAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "frequentProfiledUserTypesAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "infrequentProfiledAPIsAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "infrequentProfiledAPIsUserIdentityProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "infrequentProfiledASNsAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "infrequentProfiledASNsUserIdentityProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "infrequentProfiledUserAgentsAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "infrequentProfiledUserAgentsUserIdentityProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "infrequentProfiledUserNamesAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "infrequentProfiledUserTypesAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "rareProfiledAPIsAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "rareProfiledAPIsUserIdentityProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "rareProfiledASNsAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "rareProfiledASNsUserIdentityProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "rareProfiledUserAgentsAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "rareProfiledUserAgentsUserIdentityProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "rareProfiledUserNamesAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "rareProfiledUserTypesAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      }
+                    }
+                  },
+                  "recentCredentials": {
+                    "properties": {
+                      "accessKeyId": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "ipAddressV4": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "principalId": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      }
+                    }
+                  },
+                  "sample": {
+                    "type": "boolean"
+                  },
+                  "scannedPort": {
+                    "type": "long"
+                  },
+                  "threatListName": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  },
+                  "threatName": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  },
+                  "unusual": {
+                    "properties": {
+                      "countries": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "hoursOfDay": {
+                        "type": "long"
+                      },
+                      "isps": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "userNames": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      }
+                    }
+                  },
+                  "unusualBehavior": {
+                    "properties": {
+                      "isUnusualUserIdentity": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "unusualAPIsAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "unusualAPIsUserIdentityProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "unusualASNsAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "unusualASNsUserIdentityProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "unusualUserAgentsAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "unusualUserAgentsUserIdentityProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "unusualUserNamesAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "unusualUserTypesAccountProfiling": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      }
+                    }
+                  },
+                  "userAgent": {
+                    "properties": {
+                      "fullUserAgent": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "userAgentCategory": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      }
+                    }
+                  }
+                }
+              },
+              "archived": {
+                "type": "boolean"
+              },
+              "count": {
+                "type": "long"
+              },
+              "detectorId": {
+                "fields": {
+                  "keyword": {
+                    "ignore_above": 256,
+                    "type": "keyword"
+                  }
+                },
+                "type": "text"
+              },
+              "eventFirstSeen": {
+                "type": "date"
+              },
+              "eventLastSeen": {
+                "type": "date"
+              },
+              "evidence": {
+                "properties": {
+                  "threatIntelligenceDetails": {
+                    "properties": {
+                      "threatListName": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      },
+                      "threatNames": {
+                        "fields": {
+                          "keyword": {
+                            "ignore_above": 256,
+                            "type": "keyword"
+                          }
+                        },
+                        "type": "text"
+                      }
+                    }
+                  }
+                }
+              },
+              "resourceRole": {
+                "fields": {
+                  "keyword": {
+                    "ignore_above": 256,
+                    "type": "keyword"
+                  }
+                },
+                "type": "text"
+              },
+              "serviceName": {
+                "fields": {
+                  "keyword": {
+                    "ignore_above": 256,
+                    "type": "keyword"
+                  }
+                },
+                "type": "text"
+              }
+            }
+          },
+          "severity": {
+            "type": "long"
+          },
+          "title": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "type": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "updatedAt": {
+            "type": "date"
+          }
+        }
+      },
+      "detail-type": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "id": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "region": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "source": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "time": {
+        "type": "date"
+      },
+      "version": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      }
+    }
+  }
+}

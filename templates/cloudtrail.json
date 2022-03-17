@@ -1,0 +1,718 @@
+{
+  "index_patterns": [
+    "cloudtrail*"
+  ],
+  "mappings": {
+    "properties": {
+      "@timestamp": {
+        "type": "date"
+      },
+      "@version": {
+        "type": "integer"
+      },
+      "additionalEventData": {
+        "properties": {
+          "LoginTo": {
+            "type": "keyword"
+          },
+          "MFAUsed": {
+            "type": "keyword"
+          },
+          "MobileVersion": {
+            "type": "keyword"
+          },
+          "Note": {
+            "type": "text"
+          },
+          "SamlProviderArn": {
+            "type": "keyword"
+          },
+          "vpcEndpointId": {
+            "type": "keyword"
+          }
+        }
+      },
+      "apiVersion": {
+        "type": "keyword"
+      },
+      "awsRegion": {
+        "type": "keyword"
+      },
+      "errorCode": {
+        "type": "keyword"
+      },
+      "errorMessage": {
+        "type": "text"
+      },
+      "eventCategory": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "eventID": {
+        "type": "keyword"
+      },
+      "eventName": {
+        "type": "keyword"
+      },
+      "eventSource": {
+        "type": "keyword"
+      },
+      "eventTime": {
+        "type": "date"
+      },
+      "eventType": {
+        "type": "keyword"
+      },
+      "eventVersion": {
+        "type": "double"
+      },
+      "logGroup": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "managementEvent": {
+        "type": "boolean"
+      },
+      "owner": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "project": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "readOnly": {
+        "type": "boolean"
+      },
+      "recipientAccountId": {
+        "type": "keyword"
+      },
+      "requestID": {
+        "type": "keyword"
+      },
+      "requestParameters": {
+        "properties": {
+          "dryRun": {
+            "type": "boolean"
+          },
+          "endTime": {
+            "type": "long"
+          },
+          "fullyQualifiedArn": {
+            "properties": {
+              "arnPrefix": {
+                "properties": {
+                  "account": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  },
+                  "partition": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  },
+                  "region": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  }
+                }
+              },
+              "functionQualifier": {
+                "type": "object"
+              },
+              "relativeId": {
+                "properties": {
+                  "functionName": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  }
+                }
+              }
+            }
+          },
+          "functionName": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "iamInstanceProfile": {
+            "properties": {
+              "arn": {
+                "type": "keyword"
+              },
+              "name": {
+                "type": "keyword"
+              }
+            }
+          },
+          "imageManifest": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "imageManifestMediaType": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "imageTag": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "layerDigests": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "logGroupName": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "logGroupNames": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "logStreamName": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "publish": {
+            "type": "boolean"
+          },
+          "queryString": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "registryId": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "repositoryName": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "startTime": {
+            "type": "long"
+          },
+          "uploadId": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          }
+        }
+      },
+      "resources": {
+        "properties": {
+          "ARN": {
+            "type": "keyword"
+          },
+          "accountId": {
+            "type": "keyword"
+          },
+          "type": {
+            "type": "keyword"
+          }
+        }
+      },
+      "responseElements": {
+        "properties": {
+          "architectures": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "codeSha256": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "codeSize": {
+            "type": "long"
+          },
+          "description": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "environment": {
+            "type": "object"
+          },
+          "functionArn": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "functionName": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "handler": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "image": {
+            "properties": {
+              "imageId": {
+                "properties": {
+                  "imageDigest": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  },
+                  "imageTag": {
+                    "fields": {
+                      "keyword": {
+                        "ignore_above": 256,
+                        "type": "keyword"
+                      }
+                    },
+                    "type": "text"
+                  }
+                }
+              },
+              "imageManifest": {
+                "fields": {
+                  "keyword": {
+                    "ignore_above": 256,
+                    "type": "keyword"
+                  }
+                },
+                "type": "text"
+              },
+              "imageManifestMediaType": {
+                "fields": {
+                  "keyword": {
+                    "ignore_above": 256,
+                    "type": "keyword"
+                  }
+                },
+                "type": "text"
+              },
+              "registryId": {
+                "fields": {
+                  "keyword": {
+                    "ignore_above": 256,
+                    "type": "keyword"
+                  }
+                },
+                "type": "text"
+              },
+              "repositoryName": {
+                "fields": {
+                  "keyword": {
+                    "ignore_above": 256,
+                    "type": "keyword"
+                  }
+                },
+                "type": "text"
+              }
+            }
+          },
+          "lastByteReceived": {
+            "type": "long"
+          },
+          "lastModified": {
+            "type": "date"
+          },
+          "lastUpdateStatus": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "lastUpdateStatusReason": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "lastUpdateStatusReasonCode": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "layerDigest": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "memorySize": {
+            "type": "long"
+          },
+          "partSize": {
+            "type": "long"
+          },
+          "queryId": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "registryId": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "repositoryName": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "revisionId": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "role": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "runtime": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "state": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "timeout": {
+            "type": "long"
+          },
+          "tracingConfig": {
+            "properties": {
+              "mode": {
+                "fields": {
+                  "keyword": {
+                    "ignore_above": 256,
+                    "type": "keyword"
+                  }
+                },
+                "type": "text"
+              }
+            }
+          },
+          "uploadId": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "version": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          }
+        }
+      },
+      "serviceEventDetails": {
+        "type": "object"
+      },
+      "sessionCredentialFromConsole": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "sharedEventID": {
+        "type": "keyword"
+      },
+      "sourceIPAddress": {
+        "type": "keyword"
+      },
+      "streamname": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "tags": {
+        "type": "keyword"
+      },
+      "tlsDetails": {
+        "properties": {
+          "cipherSuite": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "clientProvidedHostHeader": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          },
+          "tlsVersion": {
+            "fields": {
+              "keyword": {
+                "ignore_above": 256,
+                "type": "keyword"
+              }
+            },
+            "type": "text"
+          }
+        }
+      },
+      "type": {
+        "type": "keyword"
+      },
+      "userAgent": {
+        "type": "keyword"
+      },
+      "userIdentity": {
+        "properties": {
+          "accessKeyId": {
+            "type": "keyword"
+          },
+          "accountId": {
+            "type": "keyword"
+          },
+          "arn": {
+            "type": "keyword"
+          },
+          "identityProvider": {
+            "type": "keyword"
+          },
+          "invokedBy": {
+            "type": "keyword"
+          },
+          "principalId": {
+            "type": "keyword"
+          },
+          "sessionContext": {
+            "properties": {
+              "attributes": {
+                "properties": {
+                  "creationDate": {
+                    "type": "date"
+                  },
+                  "mfaAuthenticated": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "sessionIssuer": {
+                "properties": {
+                  "accountId": {
+                    "type": "keyword"
+                  },
+                  "arn": {
+                    "type": "keyword"
+                  },
+                  "principalId": {
+                    "type": "keyword"
+                  },
+                  "type": {
+                    "type": "keyword"
+                  },
+                  "userName": {
+                    "type": "keyword"
+                  }
+                }
+              },
+              "webIdFederationData": {
+                "type": "object"
+              }
+            }
+          },
+          "type": {
+            "type": "keyword"
+          },
+          "userName": {
+            "type": "keyword"
+          }
+        }
+      },
+      "vpcEndpointId": {
+        "type": "keyword"
+      }
+    }
+  }
+}

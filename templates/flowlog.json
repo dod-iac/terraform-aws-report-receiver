@@ -1,0 +1,154 @@
+{
+  "index_patterns": [
+    "flowlog*"
+  ],
+  "mappings": {
+    "date_detection": false,
+    "dynamic_templates": [
+      {
+        "strings_as_keyword": {
+          "mapping": {
+            "ignore_above": 1024,
+            "type": "keyword"
+          },
+          "match_mapping_type": "string"
+        }
+      }
+    ],
+    "properties": {
+      "accountID": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "action": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "bytes": {
+        "type": "long"
+      },
+      "dstaddr": {
+        "properties": {
+          "ip": {
+            "type": "ip"
+          }
+        }
+      },
+      "dstport": {
+        "type": "long"
+      },
+      "end": {
+        "type": "date"
+      },
+      "interfaceID": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "logGroup": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "logStatus": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "owner": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "packets": {
+        "type": "long"
+      },
+      "project": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "protocol": {
+        "properties": {
+          "keyword": {
+            "ignore_above": 1024,
+            "type": "keyword"
+          },
+          "number": {
+            "ignore_above": 1024,
+            "type": "keyword"
+          },
+          "protocol": {
+            "ignore_above": 1024,
+            "type": "keyword"
+          },
+          "reference": {
+            "ignore_above": 1024,
+            "type": "keyword"
+          }
+        }
+      },
+      "srcaddr": {
+        "properties": {
+          "ip": {
+            "type": "ip"
+          }
+        }
+      },
+      "srcport": {
+        "type": "long"
+      },
+      "start": {
+        "type": "date"
+      },
+      "streamname": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      },
+      "version": {
+        "fields": {
+          "keyword": {
+            "ignore_above": 256,
+            "type": "keyword"
+          }
+        },
+        "type": "text"
+      }
+    }
+  }
+}
