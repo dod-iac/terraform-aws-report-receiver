@@ -111,7 +111,7 @@ If using `tfenv`, then add a `.terraform-version` to the project root dir, with 
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_access_logging_bucket"></a> [access\_logging\_bucket](#input\_access\_logging\_bucket) | The S3 bucket to send S3 access logs. Used by the firehose error bucket that is created | `string` | n/a | yes |
+| <a name="input_error_logging_bucket"></a> [error\_logging\_bucket](#input\_error\_logging\_bucket) | The S3 bucket to send S3 access logs. Used by the firehose error bucket that is created | `string` | n/a | yes |
 | <a name="input_opensearch_domain_arn"></a> [opensearch\_domain\_arn](#input\_opensearch\_domain\_arn) | ARN of opensearch to be used as target of stream | `string` | n/a | yes |
 | <a name="input_security_group_ids"></a> [security\_group\_ids](#input\_security\_group\_ids) | IDs of security groups to be used that allow ingress to opensearch deployment | `list(string)` | n/a | yes |
 | <a name="input_source_account"></a> [source\_account](#input\_source\_account) | the account number of the publishing account | `string` | n/a | yes |
