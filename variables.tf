@@ -46,7 +46,7 @@ variable "stream_type" {
 }
 
 
-variable "access_logging_bucket" {
+variable "error_logging_bucket" {
   description = "The S3 bucket to send S3 access logs. Used by the firehose error bucket that is created"
   type        = string
 }
