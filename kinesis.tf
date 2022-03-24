@@ -20,7 +20,7 @@ module "kinesis_stream" {
   kms_key_id       = module.kinesis_kms_key.aws_kms_key_arn
   tags             = var.tags
   retention_period = 24
-  version          = ">1.0.0"
+  version          = "~>1.0.0"
 }
 
 
