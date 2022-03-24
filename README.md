@@ -69,11 +69,11 @@ If using `tfenv`, then add a `.terraform-version` to the project root dir, with 
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_cloudwatch_kms_key"></a> [cloudwatch\_kms\_key](#module\_cloudwatch\_kms\_key) | dod-iac/cloudwatch-kms-key/aws | >1.0.0 |
+| <a name="module_cloudwatch_kms_key"></a> [cloudwatch\_kms\_key](#module\_cloudwatch\_kms\_key) | dod-iac/cloudwatch-kms-key/aws | ~>1.0.0 |
 | <a name="module_error_bucket"></a> [error\_bucket](#module\_error\_bucket) | trussworks/s3-private-bucket/aws | >= 3.7.1 |
 | <a name="module_firehose_errorkms"></a> [firehose\_errorkms](#module\_firehose\_errorkms) | ../../../terraform-aws-s3-kms-key/ | n/a |
 | <a name="module_kinesis_kms_key"></a> [kinesis\_kms\_key](#module\_kinesis\_kms\_key) | dod-iac/kinesis-kms-key/aws | >= 1.0.1 |
-| <a name="module_kinesis_stream"></a> [kinesis\_stream](#module\_kinesis\_stream) | dod-iac/kinesis-stream/aws | >1.0.0 |
+| <a name="module_kinesis_stream"></a> [kinesis\_stream](#module\_kinesis\_stream) | dod-iac/kinesis-stream/aws | ~>1.0.0 |
 
 ## Resources
 
