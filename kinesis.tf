@@ -20,7 +20,7 @@ module "kinesis_stream" {
   kms_key_id       = module.kinesis_kms_key.aws_kms_key_arn
   tags             = var.tags
   retention_period = 24
-  version          = "~>1.0.0"
+  version          = ">=1.0.0"
 }
 
 
@@ -101,7 +101,7 @@ module "error_bucket" {
 
 module "firehose_errorkms" {
   #source = "dod-iac/s3-kms-key/aws"
-  source      = "../../../terraform-aws-s3-kms-key/"
+  source      = "git::https://github.com/dod-iac/terraform-aws-s3-kms-key.git?ref=rms-extending-principals"
   name        = format("alias/%s-%s-firehose-error-kms", local.name_prefix, var.stream_type)
   description = format("A KMS key used to encrypt objects at rest in S3 for %s:%s.", local.application, local.environment)
   tags        = var.tags

@@ -49,5 +49,5 @@ module "cloudwatch_kms_key" {
   name = "alias/${local.name_prefix}-lambda-cloudwatch"
 
   tags    = var.tags
-  version = "~>1.0.0"
+  version = ">=1.0.0"
 }
