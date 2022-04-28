@@ -100,8 +100,7 @@ module "error_bucket" {
 
 
 module "firehose_errorkms" {
-  source      = "dod-iac/s3-kms-key/aws"
-  version     = ">= 1.0.0"
+  source      = "git::https://github.com/dod-iac/terraform-aws-s3-kms-key.git"
   name        = format("alias/%s-%s-firehose-error-kms", local.name_prefix, var.stream_type)
   description = format("A KMS key used to encrypt objects at rest in S3 for %s:%s.", local.application, local.environment)
   tags        = var.tags
