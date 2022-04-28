@@ -104,8 +104,8 @@ module "firehose_errorkms" {
   name        = format("alias/%s-%s-firehose-error-kms", local.name_prefix, var.stream_type)
   description = format("A KMS key used to encrypt objects at rest in S3 for %s:%s.", local.application, local.environment)
   tags        = var.tags
-  principals_extended = {
+  principals_extended = [{
     type        = "Service"
     identifiers = ["kinesis.amazonaws.com"]
-  }
+  }]
 }
