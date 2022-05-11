@@ -101,6 +101,7 @@ module "error_bucket" {
       storage_class = "STANDARD_IA"
     }
   ]
+  enable_bucket_force_destroy = true
 }
 
 
