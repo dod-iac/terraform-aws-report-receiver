@@ -38,6 +38,7 @@ data "aws_iam_policy_document" "assumepublish" {
       values   = ["arn:${var.source_partition}:logs:${var.source_region}:${var.source_account}:*", 
       "arn:${var.source_partition}:logs:${data.aws_region.current.name}:${data.aws_caller_identity.current.id}:*", 
       "arn:${var.source_partition}:events:${var.source_region}:${var.source_account}:rule/*"
+      ]
     }
   }
 }
