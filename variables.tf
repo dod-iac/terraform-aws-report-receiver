@@ -11,6 +11,10 @@ variable "tags" {
     Application = "infra"
   }
 }
+variable "source_partition"{
+  type = string
+  default = "aws"
+}
 
 
 variable "source_region" {
@@ -22,6 +26,7 @@ variable "source_account" {
   type        = string
   description = "the account number of the publishing account"
 }
+ 
 variable "subnet_ids" {
   type        = list(string)
   description = "ids of subnets that kinesisfirehose will create interfaces in. Make sure ACLs permit traffic from this subnet to where opensearch is deployed"

@@ -39,6 +39,11 @@ resource "aws_cloudwatch_log_destination_policy" "this" {
   access_policy    = data.aws_iam_policy_document.destination_policy[0].json
 }
 
+resource "aws_cloudwatch_event_permission" "this" {
+  principal    = "${var.source_account}"
+  statement_id = "${var.source_account}Access"
+}
+
 
 resource "aws_kinesis_firehose_delivery_stream" "es" {
   name        = local.firehosename

@@ -30,12 +30,15 @@ data "aws_iam_policy_document" "assumepublish" {
     effect  = "Allow"
     principals {
       type        = "Service"
-      identifiers = ["logs.${var.source_region}.amazonaws.com", "logs.${data.aws_region.current.name}.amazonaws.com", "events.amazonaws.com"]
+      identifiers = ["logs.${var.source_region}.amazonaws.com", "events.amazonaws.com"]
     }
     condition {
       test     = "StringLike"
       variable = "aws:SourceArn"
-      values   = ["arn:aws:logs:${var.source_region}:${var.source_account}:*", "arn:aws:logs:${data.aws_region.current.name}:${data.aws_caller_identity.current.id}:*", "arn:aws:events:us-west-2:302469026048:rule/report-guard-duty-finding", "arn:aws:events:us-west-2:302469026048:rule/report-config-updates"]
+      values   = ["arn:${var.source_partition}:logs:${var.source_region}:${var.source_account}:*", 
+      "arn:aws:logs:${data.aws_region.current.name}:${data.aws_caller_identity.current.id}:*", 
+      "arn:${var.source_partition}:events:${var.source_region}:${var.source_account}:rule/report-guard-duty-finding", 
+      "arn:${var.source_partition}:events:${var.source_region}:${var.source_account}:rule/report-config-updates"]
     }
   }
 }
